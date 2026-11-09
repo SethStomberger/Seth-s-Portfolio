@@ -58,48 +58,52 @@ h1 { margin: 0; font-size: 20px; line-height: 24px; font-weight: 500; color: var
 /* Work sheet */
 .sheet { position: relative; z-index: 1; background: var(--sheet); box-shadow: 0 -8px 24px #00000008; padding-block: 120px 136px; }
 .section-title { margin: 0; font-size: 18px; line-height: 28px; font-weight: 500; color: var(--ink); }
-.cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
-.card { display: flex; flex-direction: column; gap: 24px; min-width: 0; width: 100%; }
+.cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.card { display: flex; flex-direction: column; align-items: center; gap: 24px; min-width: 0; width: 100%; text-align: center; }
 .cover { height: 320px; width: 100%; background: var(--placeholder); transition: opacity .2s; }
 .card:hover .cover { opacity: .85; }
-.meta { display: flex; flex-direction: column; gap: 16px; }
-.eyebrow { font-size: 12px; line-height: 18px; letter-spacing: .01em; color: #00000066; white-space: pre-wrap; }
-.eyebrow b { font-weight: 500; }
-.card h3 { margin: 4px 0 0; font-size: 16px; line-height: 24px; font-weight: 400; letter-spacing: -.01em; color: #000; text-wrap: balance; }
-.tags { display: flex; flex-wrap: wrap; gap: 8px; }
-.tag { border-radius: 1px; background: var(--tag-bg); color: var(--tag-ink); font-size: 13px; line-height: 17px; padding: 2px 4px; }
+.meta { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+.meta-text { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.eyebrow { font-size: 12px; font-weight: 500; line-height: 18px; letter-spacing: .01em; color: #00000066; white-space: pre-wrap; }
+.card h3 { margin: 0; max-width: 458px; font-size: 20px; line-height: 28px; font-weight: 400; letter-spacing: -.01em; color: #000; text-wrap: balance; }
+.tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+.tag { border-radius: 1px; background: var(--tag-bg); color: var(--tag-ink); font-size: 12px; line-height: 16px; padding: 2px 4px; }
 
 /* More about me */
 .more { position: relative; z-index: 1; background: var(--bg); padding-block: 184px 200px; }
 .more .wrap { display: flex; justify-content: space-between; align-items: stretch; gap: 151px; }
 .exp { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; justify-content: space-between; }
-.fav { flex: 0 0 372px; min-width: 0; display: flex; flex-direction: column; gap: 24px; }
+.fav { flex: 0 0 452px; min-width: 0; display: flex; flex-direction: column; gap: 24px; }
 .exp h2, .fav h2 { margin: 0; font-size: 18px; line-height: 22px; font-weight: 500; color: #000; }
 .exp h2 { padding-bottom: 0; }
 .exp .rows { display: contents; }
 .rule { height: 1.5px; background: var(--rule); }
-.row { display: flex; justify-content: space-between; gap: 16px; font-size: 16px; line-height: 23px; }
+.row { display: flex; justify-content: space-between; gap: 16px; font-size: 16px; font-weight: 500; line-height: 24px; color: #000; opacity: .75; }
 .row .r { text-align: right; flex-shrink: 0; }
 .row span { display: block; color: var(--muted); }
 .fav hr { border: 0; border-top: 1.5px solid var(--rule); margin: 0; }
-.shelf { display: flex; flex-direction: column; gap: 10px; }
-.shelf-head { display: flex; justify-content: space-between; font-size: 16px; line-height: 20px; }
-.shelf-head b { font-weight: 500; color: #000; }
-.shelf-head a { color: #808080; }
+.shelf { display: flex; flex-direction: column; gap: 16px; }
+.shelf-head { display: flex; justify-content: space-between; font-size: 16px; line-height: 20px; color: #000; }
+.shelf-head a { display: inline-flex; align-items: center; gap: 4px; color: #808080; transition: color .15s; }
 .shelf-head a:hover { color: var(--ink-strong); }
-.covers { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
-.covers div { aspect-ratio: 86 / 129; background: var(--placeholder) center/cover no-repeat; }
-.covers.sq div { aspect-ratio: 1; background-color: #DDDDDD; }
+.shelf-head svg { width: 12px; height: 12px; fill: none; stroke: currentColor; stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; }
+.items { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.item { margin: 0; display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.item .art { aspect-ratio: 101 / 153; background: var(--placeholder) center/cover no-repeat; }
+.item.book .art { border-radius: 2px; }
+.item.sq .art { aspect-ratio: 1; background-color: #DDDDDD; }
+.item figcaption { display: flex; flex-direction: column; gap: 2px; font-size: 10px; line-height: 12px; color: #00000080; }
+.item figcaption b { font-weight: 500; color: #000; }
 
-footer { position: relative; z-index: 1; background: var(--foot); text-align: center; padding-block: 24px; font-size: 12px; line-height: 18px; color: #00000066; white-space: pre-wrap; }
+footer { position: relative; z-index: 1; background: var(--bg); text-align: center; padding-block: 24px; font-size: 14px; line-height: 18px; color: #00000080; white-space: pre-wrap; }
 
 .menu { position: fixed; left: max(30px, env(safe-area-inset-left, 0px)); top: 50%; transform: translateY(-50%); z-index: 20; display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
-.menu a { border-radius: 1px; background: var(--menu-bg); padding: 2px; font-size: 14px; line-height: 18px; color: var(--muted); transition: background .15s, color .15s; }
+.menu a { border-radius: 1px; background: var(--menu-bg); padding: 2px; font-size: 13px; line-height: 18px; color: var(--muted); transition: background .15s, color .15s; }
 .menu a:hover { color: #000; }
-.menu a.active { background: var(--menu-active); color: #000; font-weight: 500; }
+.menu a.active { background: var(--menu-active); color: #000; font-size: 14px; font-weight: 500; }
 .menu a[aria-disabled="true"] { cursor: default; }
 @media (max-width: 1099px) { .menu { display: none; } }
-@media (max-width: 900px) { .more .wrap { flex-direction: column; gap: 64px; } .fav { flex-basis: auto; } .exp { gap: 20px; } }
+@media (max-width: 900px) { .more .wrap { flex-direction: column; gap: 64px; } .fav { flex-basis: auto; width: 100%; max-width: 452px; } .exp { gap: 20px; } }
 @media (max-width: 767px) {
   .about { position: relative; min-height: 0; padding-block: 72px 96px; }
   .cards { grid-template-columns: 1fr; gap: 48px; }
